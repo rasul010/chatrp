@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 import Loader from "./loader";
 
 function App() {
@@ -11,14 +11,17 @@ function App() {
   const [Chatlog, setChatLog] = useState([]);
   function handleSubmit(event) {
     event.preventDefault();
-    setChatLog((prevetChatlog) => [...prevetChatlog, { type: "user", message: input }]);
+    setChatLog((prevetChatlog) => [
+      ...prevetChatlog,
+      { type: "user", message: input },
+    ]);
 
     sendMessenge(input);
     setInput("");
   }
   function sendMessenge(messenge) {
     const url = "https://api.openai.com/v1/chat/completions";
-    const API_KEY = "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";
+    const API_KEY = "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";
     const data = {
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: messenge }],
@@ -67,7 +70,7 @@ function App() {
           onChange={(e) => setInput(e.target.value)}
         />
         <button>
-        <Icon icon="lucide:send" />
+          <Icon icon="lucide:send" />
         </button>
       </form>
     </div>
