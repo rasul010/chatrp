@@ -21,7 +21,7 @@ function App() {
   }
   function sendMessenge(messenge) {
     const url = "https://api.openai.com/v1/chat/completions";
-    const API_KEY = "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";
+    const API_KEY = "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";
     const data = {
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: messenge }],
